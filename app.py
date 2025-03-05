@@ -13,13 +13,22 @@ def train_model():
     """Train the model on Sentiment140 dataset"""
     try:
         # Load data
+        st.info("Loading dataset...")
         train_data, _ = load_sentiment140(split_ratio=0.8)
         
         if train_data is None:
             return False, "Please upload the Sentiment140 dataset to proceed."
+            
+        st.info(f"Dataset loaded successfully. Total samples: {len(train_data)}")
         
         # Take a small subset for quick training
         train_subset = train_data.sample(n=100, random_state=42)
+        st.info(f"Selected {len(train_subset)} samples for training")
+        
+        # Verify data format
+        st.info(f"Data columns: {train_subset.columns.tolist()}")
+        st.info(f"Sample text: {train_subset['text'].iloc[0]}")
+        st.info(f"Sample target: {train_subset['target'].iloc[0]}")
         
         # Progress tracking
         progress_bar = st.progress(0)
@@ -39,17 +48,29 @@ def train_model():
             batch_labels = train_subset['target'].values[start_idx:end_idx]
             
             # Train and track accuracy
-            acc = st.session_state.model.train(batch_texts, batch_labels)
-            accuracies.append(acc)
-            
-            # Update progress
-            progress = (i + 1) / num_batches
-            progress_bar.progress(progress)
-            status_text.text(f"Training batch {i+1}/{num_batches} (Accuracy: {np.mean(accuracies):.2f})")
+            try:
+                acc = st.session_state.model.train(batch_texts, batch_labels)
+                accuracies.append(acc)
+                
+                # Update progress
+                progress = (i + 1) / num_batches
+                progress_bar.progress(progress)
+                status_text.text(f"Training batch {i+1}/{num_batches} (Accuracy: {np.mean(accuracies):.2f})")
+            except Exception as batch_error:
+                st.error(f"Error in batch {i}: {str(batch_error)}")
+                continue
         
-        st.session_state.trained = True
-        return True, np.mean(accuracies)
+        if accuracies:
+            st.session_state.trained = True
+            return True, np.mean(accuracies)
+        else:
+            return False, "No batches were successfully trained"
+            
     except Exception as e:
+        st.error(f"Training error: {str(e)}")
+        st.error(f"Error type: {type(e)}")
+        import traceback
+        st.error(f"Traceback: {traceback.format_exc()}")
         return False, str(e)
 
 def main():

@@ -34,8 +34,9 @@ ENV/
 # Streamlit
 .streamlit/
 
-# Dataset
-data/*.csv
+# Dataset - exclude full dataset but allow sample
+data/sentiment140.csv
+!data/sentiment140_sample.csv
 
 # Misc
 .DS_Store
