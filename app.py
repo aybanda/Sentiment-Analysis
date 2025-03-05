@@ -15,6 +15,9 @@ def train_model():
         # Load data
         train_data, _ = load_sentiment140(split_ratio=0.8)
         
+        if train_data is None:
+            return False, "Please upload the Sentiment140 dataset to proceed."
+        
         # Take a small subset for quick training
         train_subset = train_data.sample(n=100, random_state=42)
         

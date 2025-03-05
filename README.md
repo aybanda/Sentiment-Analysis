@@ -1,10 +1,56 @@
-# Sentiment Analysis Agent with Weightless Neural Networks
+# Sentiment Analysis with Weightless Neural Networks
 
-A continuous learning agent for sentiment analysis using weightless neural networks (WNN). Built for [AO Labs Issue #11](https://github.com/aolabsai/ao_arch/issues/11).
+A sentiment analysis model using pure binary/weightless neural networks, following AO Labs' architecture principles.
+
+## Dataset
+
+This project uses the Sentiment140 dataset. You can:
+
+1. Place the dataset file (`sentiment140.csv`) in the `data/` directory locally
+2. Or upload it through the web interface when running the application
+
+## Setup and Running
+
+1. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+2. Run the application:
+
+```bash
+streamlit run app.py
+```
+
+## Features
+
+- Pure binary/weightless neural networks
+- Pattern-based sentiment recognition
+- Continuous learning capability
+- Word-level analysis
+- Real-time feedback integration
+
+## Architecture
+
+Built following AO Labs' architecture principles:
+
+- Binary state channels (256-dimensional)
+- Local connection patterns
+- Dynamic pattern adaptation
+- Real-time learning
+
+## Usage
+
+1. Start the application
+2. Upload or use local Sentiment140 dataset
+3. Train the model (uses a small subset for demonstration)
+4. Enter text or choose examples to analyze
+5. Provide feedback to help the model learn
 
 ## Overview
 
-This agent demonstrates AO Labs' architecture through:
+This Model demonstrates AO Labs' architecture through:
 
 - Pure binary/weightless neural network for sentiment analysis
 - Pattern-based learning with binary channel operations
@@ -112,10 +158,6 @@ Required packages (with minimum versions):
 - numpy>=1.21.0 (for binary operations)
 
 All dependencies focus on maintaining a lightweight implementation aligned with AO Labs' binary/weightless approach.
-
-## Dataset
-
-The agent uses the Sentiment140 dataset, which contains 1.6 million tweets with sentiment labels. The dataset is automatically sampled during training to demonstrate continuous learning capabilities. You can find more information about the dataset [here](http://help.sentiment140.com/for-students).
 
 ## Acknowledgments
 
