@@ -6038,6 +6038,66 @@ yes
 
 _**Assistant**_
 
+Let's push our latest changes and test the deployment:
+
+---
+
+_****_
+
+```bash
+git add . && git commit -m "Update: Finalize dataset handling with upload functionality" && git push origin main
+```
+
+```
+Ajay17@AJAYs-MacBook-Air sentiment140 % git add . && git commit -m "Update: Finalize dataset handling with upload functio
+<andling with upload functionality" && git push origin main
+[main 843601d] Update: Finalize dataset handling with upload functionality
+ 5 files changed, 585 insertions(+), 34 deletions(-)
+Enumerating objects: 19, done.
+Counting objects: 100% (19/19), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (10/10), 6.95 KiB | 3.47 MiB/s, done.
+Total 10 (delta 5), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (5/5), completed with 5 local objects.
+To https://github.com/aybanda/Sentiment-Analysis.git
+   ba95dad..843601d  main -> main
+Ajay17@AJAYs-MacBook-Air sentiment140 %
+```
+
+---
+
+_****_
+
+Now that the changes are pushed, you can:
+
+1. Go to [share.streamlit.io](https://share.streamlit.io)
+2. Deploy the app (or redeploy if it's already there)
+3. Test the following workflow:
+   - When the app starts, it will show a file upload option
+   - Upload your local `sentiment140.csv` file
+   - Click "Train Model"
+   - Test some sentiment analysis examples
+
+The app should now:
+1. Properly handle the dataset upload
+2. Show clear instructions to users
+3. Train successfully after upload
+4. Allow sentiment analysis and feedback
+
+Would you like me to help you test any specific part of the deployment or make any adjustments to the implementation?
+
+---
+
+_**User**_
+
+File must be 200.0MB or smaller.
+
+
+---
+
+_**Assistant**_
+
 
 
 ---

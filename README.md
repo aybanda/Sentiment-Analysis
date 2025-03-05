@@ -4,10 +4,25 @@ A sentiment analysis model using pure binary/weightless neural networks, followi
 
 ## Dataset
 
-This project uses the Sentiment140 dataset. You can:
+This project uses the Sentiment140 dataset. You have several options:
 
-1. Place the dataset file (`sentiment140.csv`) in the `data/` directory locally
-2. Or upload it through the web interface when running the application
+1. Use the full dataset:
+
+   - Download the full Sentiment140 dataset
+   - Place `sentiment140.csv` in the `data/` directory
+   - The application will automatically create a balanced sample (100k tweets)
+
+2. Use the sample dataset:
+
+   - A balanced sample of 100k tweets will be created automatically
+   - The sample is created once and reused for subsequent runs
+
+3. Upload through web interface:
+   - Upload either the full dataset or a sample
+   - If you upload the full dataset, it will be automatically sampled
+   - Maximum upload size: 200MB
+
+The sampling ensures balanced positive and negative examples while keeping the dataset size manageable for deployment.
 
 ## Setup and Running
 
