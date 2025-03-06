@@ -108,5 +108,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Built following AO Labs' weightless neural network architecture principles
 - Uses Sentiment140 dataset for demonstration
-- Created in response to [AO Labs Issue #11](https://github.com/aolabsai/ao_arch/issues/11)
+- Created in response to [AO Labs Issue #8](https://github.com/aolabsai/ao_arch/issues/8)
 - Dataset: Sentiment140 (https://www.kaggle.com/datasets/kazanova/sentiment140)
