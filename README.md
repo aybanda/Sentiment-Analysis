@@ -1,6 +1,6 @@
 # Sentiment Analysis with Weightless Neural Networks
 
-A sentiment analysis implementation using pure binary/weightless neural networks, created for [AO Labs Issue #11](https://github.com/aolabsai/ao_arch/issues/11). This project demonstrates how to build an agent that can learn from new datasets while maintaining the core principles of weightless neural networks.
+A sentiment analysis implementation using pure binary/weightless neural networks, created for [AO Labs Issue #8](https://github.com/aolabsai/ao_arch/issues/8). This project demonstrates how to build an agent that can learn from new datasets while maintaining the core principles of weightless neural networks.
 
 ## Key Features
 
